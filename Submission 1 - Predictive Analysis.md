@@ -4,11 +4,7 @@
 
 ## Domain Proyek
 
-Pelanggan kini lebih berdaya dari sebelumnya karena mereka memiliki akses ke banyak informasi di ujung jari mereka. Inilah salah satu alasan mengapa siklus pembelian sangat berbeda dengan sebelumnya. 
-Saat ini, jika Anda berharap pelanggan membeli tiket pesawat atau liburan Anda saat mereka datang ke bandara, Anda sudah kalah! Bersikap reaktif dalam situasi ini bukanlah hal yang ideal; maskapai penerbangan harus proaktif untuk mendapatkan pelanggan sebelum mereka memulai liburan.
-
-Anda harus memanipulasi dan menyiapkan data pesanan pelanggan yang disediakan sehingga Anda dapat membangun model prediktif berkualitas tinggi. 
-Dengan model prediktif Anda, penting untuk menginterpretasikan hasilnya guna memahami seberapa "prediktif" data tersebut sebenarnya dan apakah kita dapat menggunakannya secara layak untuk memprediksi hasil target (pelanggan yang membeli selama liburan).
+British Airways (BA) adalah maskapai penerbangan nasional Britania Raya (UK) [[1](https://www.britishairways.com/content/information/about-ba)]. Setiap hari, ribuan penerbangan BA tiba dan berangkat dari Inggris, membawa pelanggan dari seluruh dunia. Baik untuk liburan, pekerjaan, atau alasan lainnya, proses menyeluruh dari penjadwalan, perencanaan, naik pesawat, pengisian bahan bakar, transportasi, pendaratan, dan terus menjalankan penerbangan tepat waktu, efisien, dan dengan layanan pelanggan kelas atas merupakan tugas besar dengan banyak tanggung jawab yang sangat penting.
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Jelaskan mengapa dan bagaimana masalah tersebut harus diselesaikan
@@ -18,33 +14,33 @@ Dengan model prediktif Anda, penting untuk menginterpretasikan hasilnya guna mem
 
 ## Business Understanding
 
-Bangun model prediktif berkualitas tinggi untuk memprediksi hasil target (pelanggan yang membeli selama liburan).
+Pelanggan kini lebih berdaya dari sebelumnya karena mereka memiliki akses ke banyak informasi di ujung jari mereka. Inilah salah satu alasan mengapa siklus pembelian sangat berbeda dengan sebelumnya. 
+Saat ini, jika Anda berharap pelanggan membeli tiket pesawat atau liburan Anda saat mereka datang ke bandara, maskapai penerbangan harus proaktif untuk mendapatkan pelanggan sebelum mereka memulai liburan. Dengan model prediktif, penting untuk menginterpretasikan hasilnya guna memahami seberapa "prediktif" data tersebut sebenarnya dan apakah kita dapat menggunakannya secara layak untuk memprediksi hasil target (pelanggan yang membeli selama liburan).
 
 Bagian laporan ini mencakup:
 
 ### Problem Statements
 
 Menjelaskan pernyataan masalah latar belakang:
-- Pernyataan Masalah 1
-- Pernyataan Masalah 2
-- Pernyataan Masalah n
+- Bagaimana membuat model machine learning yang dapat memprediksi pelanggan berdasarkan customer booking behavior?
+- Model yang seperti apa yang memiliki akurasi paling baik?
+- Bagaimana model ini dapat membantu perusahaan?
 
 ### Goals
 
 Menjelaskan tujuan dari pernyataan masalah:
-- Jawaban pernyataan masalah 1
-- Jawaban pernyataan masalah 2
-- Jawaban pernyataan masalah n
-
-Semua poin di atas harus diuraikan dengan jelas. Anda bebas menuliskan berapa pernyataan masalah dan juga goals yang diinginkan.
+- Bangun model prediktif berkualitas tinggi untuk memprediksi hasil target (pelanggan yang membeli selama liburan).
+- Memilih algoritma model yang cocok untuk menemukan akurasi terbaik dalam memprediksi customer booking.
 
 **Rubrik/Kriteria Tambahan (Opsional)**:
 - Menambahkan bagian “Solution Statement” yang menguraikan cara untuk meraih goals. Bagian ini dibuat dengan ketentuan sebagai berikut: 
 
     ### Solution statements
-    - Mengajukan 2 atau lebih solution statement. Misalnya, menggunakan dua atau lebih algoritma untuk mencapai solusi yang diinginkan atau melakukan improvement pada baseline model dengan hyperparameter tuning.
-    - Solusi yang diberikan harus dapat terukur dengan metrik evaluasi.
-
+    - Lakukan Analisis Data Eksploratif dari data yang disediakan oleh British Airways.
+    - Bangun model prediktif berkualitas tinggi untuk memprediksi hasil target (pelanggan yang membeli selama liburan).
+    - Evaluasi model pembelajaran mesin yang telah dibuat.
+    - Ringkas temuan utama analisis, beserta penjelasan yang jelas dan ringkas.
+      
 ## Data Understanding
 Kumpulan data yang digunakan dikumpulkan dari situs web [Skytrax.com](https://www.skytrax.com), menggunakan metode web scraping. Setelah mendapatkan data, data tersebut tinggal dibersihkan dan disiapkan untuk analisis. Berikut informasi mengenai dataset:  
 
@@ -64,29 +60,35 @@ Kumpulan data yang digunakan dikumpulkan dari situs web [Skytrax.com](https://ww
 - `flight_duration` = total duration of flight (in hours)
 - `booking_complete` = flag indicating if the customer completed the booking
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data atau exploratory data analysis.
+![2](https://github.com/user-attachments/assets/dda76384-998d-4063-92d9-201e0b365755)
+
+- Dataset berupa CSV (Comma-Seperated Values).
+- Dataset memiliki 4999 sample.
+- Dataset memiliki 1 fitur bertipe float64, 8 fitur bertipe int64, dan 5 fitur bertipe object.
+- Tidak terdapat missing value dalam dataset.
 
 ## Data Preparation
-Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
+Pada proses Data Preparation dilakukan kegiatan seperti Data Gathering, Data Assessing, dan Data Cleaning. Pada proses Data Gathering, data diimpor sedemikian rupa agar bisa dibaca dengan baik menggunakan dataframe Pandas. Untuk proses Data Assessing, berikut adalah beberapa pengecekan yang dilakukan:
+- Duplicate data (data yang serupa dengan data lainnya).
+- Missing value (data atau informasi yang "hilang" atau tidak tersedia)
+- Outlier (data yang menyimpang dari rata-rata sekumpulan data yang ada).
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+Pada proses Data Cleaning yang dilakukan adalah seperti:
+- Converting Column Type (Mengubah tipe suatu kolom) dengan Label Encoder, Label Encoder adalah teknik dalam pembelajaran mesin yang digunakan untuk mengubah nilai kategori (categorical values) menjadi angka (numerical values).
+- Train Test Split (membagi data menjadi data latih dan data uji).
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
 * RandomForestClassification: Untuk model yang lebih kompleks dan mampu menangani interaksi fitur.
+    * Keuntungan:
+        * Deteksi pentingnya fitur
+        * Fleksibel
+    * Kekurangan:
+        * Potensi overfitting
+        * Kurang optimal untuk data skala kecil
 
 * KFold: Kelas ini digunakan untuk membagi kumpulan data Anda menjadi K lipatan berurutan untuk validasi silang.
-
-* Vader: Digunakan untuk membangun model untuk penilaian sentimen.
-
-- Menjelaskan kelebihan dan kekurangan dari setiap algoritma yang digunakan.
-- Jika menggunakan satu algoritma pada solution statement, lakukan proses improvement terhadap model dengan hyperparameter tuning. **Jelaskan proses improvement yang dilakukan**.
-- Jika menggunakan dua atau lebih algoritma pada solution statement, maka pilih model terbaik sebagai solusi. **Jelaskan mengapa memilih model tersebut sebagai model terbaik**.
+* 
 
 ## Evaluation
 Dalam tahap evaluasi, metrik yang digunakan adalah `accuracy`
@@ -102,12 +104,9 @@ $$\text{Accuracy} = \frac{\text{TP + TN}}{\text{TN + TP + FN + FP}} \times 100\%
 
 Rumus ini memecah akurasi menjadi rasio antara data yang diklasifikasikan dengan benar (TP dan TN) dengan jumlah total data. Mengalikan dengan 100% mengubah rasio menjadi persentase.
 
-Berikut hasil accuracy 5 buah model yang latih:
+Berikut hasil accuracy RandomForestClassification model yang latih:
 
 ![Haisl dari evaluasi](https://github.com/user-attachments/assets/eb55e20e-9de8-498c-a3e2-e41b125def0d)
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
 
 
 _Catatan:_
