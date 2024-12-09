@@ -77,9 +77,19 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
     * Kekurangan:
         * Potensi overfitting
         * Kurang optimal untuk data skala kecil
-
+* Gradient Boosting Classifier (XGBoost):
+    * Keuntungan:
+          *
+    * Kekurangan:
+          *
+          
+* Logistic Regression:
+     * Keuntungan:
+          *
+    * Kekurangan:
+          *
+      
 * KFold: Kelas ini digunakan untuk membagi kumpulan data Anda menjadi K lipatan berurutan untuk validasi silang.
-* 
 
 ## Evaluation
 Dalam tahap evaluasi, metrik yang digunakan adalah `accuracy`
