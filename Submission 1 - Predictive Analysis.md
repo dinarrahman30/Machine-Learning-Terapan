@@ -52,6 +52,7 @@ Kumpulan data yang digunakan dikumpulkan dari situs web [Skytrax.com](https://ww
 - `booking_complete` = flag indicating if the customer completed the booking
 
 ![2](https://github.com/user-attachments/assets/dda76384-998d-4063-92d9-201e0b365755)
+Gambar 1. Dataset
 
 - Dataset berupa CSV (Comma-Seperated Values).
 - Dataset memiliki 4999 sample.
@@ -63,6 +64,10 @@ Pada proses Data Preparation dilakukan kegiatan seperti Data Gathering, Data Ass
 - Duplicate data (data yang serupa dengan data lainnya).
 - Missing value (data atau informasi yang "hilang" atau tidak tersedia)
 - Outlier (data yang menyimpang dari rata-rata sekumpulan data yang ada).
+- Menghitung Mutual Information (MI) scores antara fitur independen (X) dan target (y) dalam dataset. MI mengukur tingkat ketergantungan antara variabel, memberikan wawasan tentang pentingnya setiap fitur terhadap target dalam tugas klasifikasi.
+
+![image](https://github.com/user-attachments/assets/0ca8f7d3-b5fb-401c-b0d3-a3bc855f2280)
+Gambar 2. MI Scores
 
 Pada proses Data Cleaning yang dilakukan adalah seperti:
 - Converting Column Type (Mengubah tipe suatu kolom) dengan Label Encoder, Label Encoder adalah teknik dalam pembelajaran mesin yang digunakan untuk mengubah nilai kategori (categorical values) menjadi angka (numerical values).
@@ -79,15 +84,21 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
         * Kurang optimal untuk data skala kecil
 * Gradient Boosting Classifier (XGBoost):
     * Keuntungan:
-          *
+          * Performa tinggi
+          * dapat menangani data non-linier
+          * Fitur tambahan, seperti handling missing value
     * Kekurangan:
-          *
-          
+          * Resiko overfitting
+          * Memerlukan banyak data
+          * Kompleksitas     
 * Logistic Regression:
      * Keuntungan:
-          *
+          * Sederhana dan cepat
+          * Efisien untuk data linier
     * Kekurangan:
-          *
+          * Sensitif terhadap korelasi antar fitur
+          * Tidak cocok untuk data non-linier
+          * Kinerja terbatas terhadap data kompleks
       
 * KFold: Kelas ini digunakan untuk membagi kumpulan data Anda menjadi K lipatan berurutan untuk validasi silang.
 
@@ -105,11 +116,34 @@ $$\text{Accuracy} = \frac{\text{TP + TN}}{\text{TN + TP + FN + FP}} \times 100\%
 
 Rumus ini memecah akurasi menjadi rasio antara data yang diklasifikasikan dengan benar (TP dan TN) dengan jumlah total data. Mengalikan dengan 100% mengubah rasio menjadi persentase.
 
-Berikut hasil accuracy RandomForestClassification model yang latih:
+Berikut hasil accuracy dari ketiga model yang latih:
+| Model | Accuracy |
+| ------ | ------ |
+| RandomForest  | 0.8543 |
+| XGBoost | 0.851 |
+| Logistic Regression | 0.852 |
 
-![Haisl dari evaluasi](https://github.com/user-attachments/assets/eb55e20e-9de8-498c-a3e2-e41b125def0d)
+Tabel 1. Hasil Akurasi
+
+![image](https://github.com/user-attachments/assets/0cc44c61-72cf-4f79-b982-c2408a934eb6)
+
+Gambar 3. Hasil dari akurasi berbagai model
 
 
-_Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.
+Top 5 Customer Behavior dengan model Random Forest
+1. purchase_lead
+2. route
+3. light_hour
+4. length_of_stay
+5. booking_origin
+
+![image](https://github.com/user-attachments/assets/be00fe07-7c7a-44b1-845f-6c67db361b98)
+
+Gambar 4. Top 5 Customer Behavior
+
+Dilihat dari Tabel 1. Hasil Accuracy dapat diketahui bahwa model dengan algoritma Random Forest memiliki Accuracy yang lebih tinggi dengan accuracy 85.4% . Untuk itu model tersebut yang akan dipilih untuk digunakan. Alasan mengapa metode Random Forest yang dipilih karena Random Forest adalah algoritma yang sederhana dan fleksibel dibandingkan. Hal ini membuatnya lebih mudah untuk dipahami, diimplementasikan, dan diinterpretasikan. KNN juga tidak memiliki banyak parameter yang perlu dioptimalkan, sehingga lebih mudah untuk digunakan. Pada gambar 4, dengan menggunakan model Random Forest didapatkan top 5  fitur customer behavior ketika sedang melakukan pemesanan tiket. Customer akan mempertimbangkan kelima fitur di atas dalam memesan tiket. Kita dalam menggunakan top 5 fitur ini untuk membuat pengambilan keputusan bisnis perusahaan.
+
+
+
+_Referensi_
+- https://www.britishairways.com/content/information/about-ba
