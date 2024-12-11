@@ -33,7 +33,7 @@ Menjelaskan tujuan dari pernyataan masalah:
     - Ringkas temuan utama analisis, beserta penjelasan yang jelas dan ringkas.
       
 ## Data Understanding
-Kumpulan data yang digunakan dikumpulkan dari situs web [Skytrax.com](https://www.skytrax.com), menggunakan metode web scraping. Setelah mendapatkan data, data tersebut tinggal dibersihkan dan disiapkan untuk analisis. Berikut informasi mengenai dataset:  
+Kumpulan data yang digunakan dikumpulkan dari situs web [Skytrax.com](https://www.airlinequality.com/), menggunakan metode web scraping. Setelah mendapatkan data, data tersebut tinggal dibersihkan dan disiapkan untuk analisis. Berikut informasi mengenai dataset:  
 
 ### Variabel-variabel pada dataset adalah sebagai berikut:
 - `num_passengers` = number of passengers travelling
@@ -56,7 +56,8 @@ Gambar 1. Dataset
 
 - Dataset berupa CSV (Comma-Seperated Values).
 - Dataset memiliki 4999 sample.
-- Dataset memiliki 1 fitur bertipe float64, 8 fitur bertipe int64, dan 5 fitur bertipe object.
+- Dataset sebelum menggunakan metode encoding berjumlah 
+- Dataset yang telah di encoding memiliki 1 fitur bertipe float64, 8 fitur bertipe int64, dan 5 fitur bertipe object.
 - Tidak terdapat missing value dalam dataset.
 
 ## Data Preparation
