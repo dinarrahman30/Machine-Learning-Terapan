@@ -25,7 +25,7 @@ Menjelaskan tujuan dari pernyataan masalah:
 
     ### Solution statements
     - Lakukan Analisis Data Eksploratif dari data yang disediakan oleh British Airways.
-    - Bangun model prediktif berkualitas tinggi untuk memprediksi hasil target (pelanggan yang membeli selama liburan). Diantaranya menggunakan model,
+    - Bangun model prediktif berkualitas tinggi untuk memprediksi hasil target (pelanggan yang membeli selama liburan). Diantaranya membuat perbandingan dengan menggunakan model,
       - Random Forest: Algoritma machine learning dengan menggunakan prinsip umum ensemble acak dari suatu pohon keputusan [[2](https://ejournal.bsi.ac.id/ejurnal/index.php/jtk/article/view/10468/pdf)].
       - Gradient Boosting Classifier (XGBoost): Algoritme ini membangun model aditif secara bertahap; memungkinkan pengoptimalan fungsi kerugian yang dapat dibedakan secara acak. Pada setiap tahap, n_classes_ pohon regresi dipasang pada gradien negatif fungsi kerugian, misalnya kerugian log biner atau multikelas. Klasifikasi biner adalah kasus khusus di mana hanya satu pohon regresi yang diinduksi [[3](https://scikit-learn.org/1.5/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html)].
       - Logistic Regression: Algoritma machine learning yang dapat bekerja pada data kategorikal yang digunakan untuk klasifikasi. Meskipun namanya mengandung kata "regression", logistic regression digunakan untuk memodelkan probabilitas dari suatu kelas atau kategori, bukan untuk regresi kontinu seperti pada linear regression [[4](https://jtiik.ub.ac.id/index.php/jtiik/article/view/8198/1332)].
@@ -63,10 +63,10 @@ Informasi yang kita dapat dari `Data Understanding` ialah,
 - Dataset berupa CSV (Comma-Seperated Values).  
 - Dataset memiliki 50000 sample dengan jumlah kolom sebanyak 14.
 - Dataset sebelum konversi kolom flight_day berjumlah data int64 berjumlah 8, data object berjumlah 5, dan data float64 berjumlah 1.
-- Dataset setelah konversi kolom flight_day berumlah data int64 berjumlah 9, data object berjumlah 4, dan data float64 berjumlah 1.
+- Dataset setelah konversi kolom flight_day berumlah data int64 berjumlah 9, data object berjumlah 4, dan data float64 berjumlah 1. Konversi ini memudahkan untuk mencari MI scores.
 - Tidak terdapat missing value dalam dataset.
 
-### MI Scores
+#### MI Scores
 Menghitung Mutual Information (MI) scores antara fitur independen (X) dan target (y) dalam dataset. MI mengukur tingkat ketergantungan antara variabel, memberikan wawasan tentang pentingnya setiap fitur terhadap target dalam tugas klasifikasi.
 
 ![image](https://github.com/user-attachments/assets/0ca8f7d3-b5fb-401c-b0d3-a3bc855f2280)
@@ -75,8 +75,9 @@ Gambar 2. MI Scores
 ## Data Preparation
 Data Preparation merupakan tahap untuk mempersiapkan data sebelum masuk ke tahap pembuatan model Machine Learning. :
 Pada proses Data Cleaning yang dilakukan adalah seperti:
-- Converting Column Type (Mengubah tipe suatu kolom) dengan Label Encoder, Label Encoder adalah teknik dalam pembelajaran mesin yang digunakan untuk mengubah nilai kategori (categorical values) menjadi angka (numerical values).
-- Train Test Split (membagi data menjadi data latih dan data uji).
+- Converting Column Type (Mengubah tipe suatu kolom) dengan Label Encoder, Label Encoder adalah teknik dalam machine learning yang digunakan untuk mengubah nilai kategori (categorical values) menjadi angka (numerical values) yang dapat mempermudah dalam menjalankan model machine learning.
+  - Dapat kita lihat data yang sesuah di encoding berjumlah data 1 fitur bertipe float64 dan 12 fitur bertipe int64.
+- Train Test Split (dengan pembagian data menjadi data latih 80% dan data uji 20%).
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
@@ -90,7 +91,7 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
       * Potensi overfitting
       * Kurang optimal untuk data skala kecil
 * Gradient Boosting Classifier (XGBoost):
-  - `random_stat`  pengambilan sampel secara acak.
+  - `random_state`  pengambilan sampel secara acak.
     * Keuntungan:
       * Performa tinggi
       * dapat menangani data non-linier
@@ -137,7 +138,7 @@ Tabel 1. Hasil Akurasi
 Gambar 3. Hasil dari akurasi berbagai model
 
 
-Top 5 Customer Behavior dengan model Random Forest
+Top 5 Customer Behavior dengan model Random Forest,
 1. purchase_lead
 2. route
 3. light_hour
