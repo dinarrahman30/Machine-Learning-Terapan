@@ -58,7 +58,7 @@ Metode .info() memberi kita deskripsi data, yang memberi tahu kita nama kolom, t
 - `flight_duration` = total durasi penerbangan (dalam jam)
 - `booking_complete` = tanda yang menunjukkan apakah pelanggan telah menyelesaikan pemesanan
 
-Informasi yang kita dapat dari `Data Understanding` ialah,
+Ringkasan informasi yang kita dapat dari `Data Understanding` ialah,
 
 - Dataset berupa CSV (Comma-Seperated Values).  
 - Dataset memiliki 50000 sample dengan jumlah kolom sebanyak 14.
