@@ -11,14 +11,11 @@ British Airways (BA) adalah maskapai penerbangan nasional Britania Raya (UK) [[1
 Pelanggan kini lebih berdaya dari sebelumnya karena mereka memiliki akses ke banyak informasi di ujung jari mereka. Inilah salah satu alasan mengapa siklus pembelian sangat berbeda dengan sebelumnya. 
 Saat ini, jika Anda berharap pelanggan membeli tiket pesawat atau liburan Anda saat mereka datang ke bandara, maskapai penerbangan harus proaktif untuk mendapatkan pelanggan sebelum mereka memulai liburan. Dengan model prediktif, penting untuk menginterpretasikan hasilnya guna memahami seberapa "prediktif" data tersebut sebenarnya dan apakah kita dapat menggunakannya secara layak untuk memprediksi hasil target (pelanggan yang membeli selama liburan).
 
-Bagian laporan ini mencakup:
-
 ### Problem Statements
 
 Menjelaskan pernyataan masalah latar belakang:
 - Bagaimana membuat model machine learning yang dapat memprediksi pelanggan berdasarkan customer booking behavior?
 - Model yang seperti apa yang memiliki akurasi paling baik?
-- Bagaimana model ini dapat membantu perusahaan?
 
 ### Goals
 
@@ -28,9 +25,10 @@ Menjelaskan tujuan dari pernyataan masalah:
 
     ### Solution statements
     - Lakukan Analisis Data Eksploratif dari data yang disediakan oleh British Airways.
-    - Bangun model prediktif berkualitas tinggi untuk memprediksi hasil target (pelanggan yang membeli selama liburan).
-    - Evaluasi model pembelajaran mesin yang telah dibuat.
-    - Ringkas temuan utama analisis, beserta penjelasan yang jelas dan ringkas.
+    - Bangun model prediktif berkualitas tinggi untuk memprediksi hasil target (pelanggan yang membeli selama liburan). Diantaranya menggunakan model,
+      - Random Forest: Algoritma machine learning dengan menggunakan prinsip umum ensemble acak dari suatu pohon keputusan [[2](https://ejournal.bsi.ac.id/ejurnal/index.php/jtk/article/view/10468/pdf)].
+      - Gradient Boosting Classifier (XGBoost): Algoritme ini membangun model aditif secara bertahap; memungkinkan pengoptimalan fungsi kerugian yang dapat dibedakan secara acak. Pada setiap tahap, n_classes_ pohon regresi dipasang pada gradien negatif fungsi kerugian, misalnya kerugian log biner atau multikelas. Klasifikasi biner adalah kasus khusus di mana hanya satu pohon regresi yang diinduksi [[3](https://scikit-learn.org/1.5/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html)].
+      - Logistic Regression: Algoritma machine learning yang dapat bekerja pada data kategorikal yang digunakan untuk klasifikasi. Meskipun namanya mengandung kata "regression", logistic regression digunakan untuk memodelkan probabilitas dari suatu kelas atau kategori, bukan untuk regresi kontinu seperti pada linear regression [[4](https://jtiik.ub.ac.id/index.php/jtiik/article/view/8198/1332)].
       
 ## Data Understanding
 Kumpulan data yang digunakan dikumpulkan dari situs web [Skytrax.com](https://www.airlinequality.com/), menggunakan metode web scraping. Setelah mendapatkan data, data tersebut tinggal dibersihkan dan disiapkan untuk analisis. Berikut informasi mengenai dataset:  
@@ -100,8 +98,6 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
           * Sensitif terhadap korelasi antar fitur
           * Tidak cocok untuk data non-linier
           * Kinerja terbatas terhadap data kompleks
-      
-* KFold: Kelas ini digunakan untuk membagi kumpulan data Anda menjadi K lipatan berurutan untuk validasi silang.
 
 ## Evaluation
 Dalam tahap evaluasi, metrik yang digunakan adalah `accuracy`
