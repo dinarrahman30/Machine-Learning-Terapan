@@ -31,43 +31,49 @@ Menjelaskan tujuan dari pernyataan masalah:
       - Logistic Regression: Algoritma machine learning yang dapat bekerja pada data kategorikal yang digunakan untuk klasifikasi. Meskipun namanya mengandung kata "regression", logistic regression digunakan untuk memodelkan probabilitas dari suatu kelas atau kategori, bukan untuk regresi kontinu seperti pada linear regression [[4](https://jtiik.ub.ac.id/index.php/jtiik/article/view/8198/1332)].
       
 ## Data Understanding
-Kumpulan data yang digunakan dikumpulkan dari situs web [Skytrax.com](https://www.airlinequality.com/), menggunakan metode web scraping. Setelah mendapatkan data, data tersebut tinggal dibersihkan dan disiapkan untuk analisis. Berikut informasi mengenai dataset:  
+Kumpulan data yang digunakan dikumpulkan dari situs web [Skytrax.com](https://www.airlinequality.com/), menggunakan metode web scraping. Setelah mendapatkan data, data tersebut tinggal dibersihkan dan disiapkan untuk analisis. Berikut informasi mengenai dataset: 
 
-### Variabel-variabel pada dataset adalah sebagai berikut:
-- `num_passengers` = number of passengers travelling
-- `sales_channel` = sales channel booking was made on
-- `trip_type` = trip Type (Round Trip, One Way, Circle Trip)
-- `purchase_lead` = number of days between travel date and booking date
-- `length_of_stay` = number of days spent at destination
-- `flight_hour` = hour of flight departure
-- `flight_day` = day of week of flight departure
-- `route` = origin -> destination flight route
-- `booking_origin` = country from where booking was made
-- `wants_extra_baggage` = if the customer wanted extra baggage in the booking
-- `wants_preferred_seat` = if the customer wanted a preferred seat in the booking
-- `wants_in_flight_meals` = if the customer wanted in-flight meals in the booking
-- `flight_duration` = total duration of flight (in hours)
-- `booking_complete` = flag indicating if the customer completed the booking
-
-![2](https://github.com/user-attachments/assets/dda76384-998d-4063-92d9-201e0b365755)
+![image](https://github.com/user-attachments/assets/db1ac901-6c11-496c-83a4-4535e238558d)
 Gambar 1. Dataset
 
-- Dataset berupa CSV (Comma-Seperated Values).
-- Dataset memiliki 4999 sample.
-- Dataset sebelum menggunakan metode encoding berjumlah 
-- Dataset yang telah di encoding memiliki 1 fitur bertipe float64, 8 fitur bertipe int64, dan 5 fitur bertipe object.
+Metode `.head()` memungkinkan kita untuk melihat 5 baris pertama dalam dataset, ini berguna untuk inspeksi visual kolom kita.
+
+### Exploratory Data Analytics (EDA)
+Exploratory data analysis merupakan proses investigasi awal pada data untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data. Teknik ini biasanya menggunakan bantuan statistik dan representasi grafis atau visualisasi.
+
+Metode .info() memberi kita deskripsi data, yang memberi tahu kita nama kolom, tipe datanya, dan berapa banyak nilai null yang kita miliki. 
+#### Variabel-variabel pada dataset adalah sebagai berikut:
+- `num_passengers` = jumlah penumpang yang bepergian
+- `sales_channel` = saluran penjualan tempat pemesanan dilakukan
+- `trip_type` = Jenis perjalanan (Pulang Pergi, Sekali Jalan, Perjalanan Lingkaran)
+- `purchase_lead` = jumlah hari antara tanggal perjalanan dan tanggal pemesanan
+- `length_of_stay` = jumlah hari yang dihabiskan di tempat tujuan
+- `flight_hour` = jam keberangkatan pesawat
+- `flight_day` = hari keberangkatan pesawat
+- `route` = rute penerbangan asal -> tujuan
+- `booking_origin` = negara tempat pemesanan dilakukan
+- `wants_extra_baggage` = jika pelanggan menginginkan bagasi tambahan dalam pemesanan
+- `wants_preferred_seat` = jika pelanggan menginginkan kursi pilihan dalam pemesanan
+- `wants_in_flight_meals` = jika pelanggan menginginkan makanan dalam pesawat dalam pemesanan
+- `flight_duration` = total durasi penerbangan (dalam jam)
+- `booking_complete` = tanda yang menunjukkan apakah pelanggan telah menyelesaikan pemesanan
+
+Informasi yang kita dapat dari `Data Understanding` ialah,
+
+- Dataset berupa CSV (Comma-Seperated Values).  
+- Dataset memiliki 50000 sample dengan jumlah kolom sebanyak 14.
+- Dataset sebelum konversi kolom flight_day berjumlah data int64 berjumlah 8, data object berjumlah 5, dan data float64 berjumlah 1.
+- Dataset setelah konversi kolom flight_day berumlah data int64 berjumlah 9, data object berjumlah 4, dan data float64 berjumlah 1.
 - Tidak terdapat missing value dalam dataset.
 
-## Data Preparation
-Pada proses Data Preparation dilakukan kegiatan seperti Data Gathering, Data Assessing, dan Data Cleaning. Pada proses Data Gathering, data diimpor sedemikian rupa agar bisa dibaca dengan baik menggunakan dataframe Pandas. Untuk proses Data Assessing, berikut adalah beberapa pengecekan yang dilakukan:
-- Duplicate data (data yang serupa dengan data lainnya).
-- Missing value (data atau informasi yang "hilang" atau tidak tersedia)
-- Outlier (data yang menyimpang dari rata-rata sekumpulan data yang ada).
-- Menghitung Mutual Information (MI) scores antara fitur independen (X) dan target (y) dalam dataset. MI mengukur tingkat ketergantungan antara variabel, memberikan wawasan tentang pentingnya setiap fitur terhadap target dalam tugas klasifikasi.
+### MI Scores
+Menghitung Mutual Information (MI) scores antara fitur independen (X) dan target (y) dalam dataset. MI mengukur tingkat ketergantungan antara variabel, memberikan wawasan tentang pentingnya setiap fitur terhadap target dalam tugas klasifikasi.
 
 ![image](https://github.com/user-attachments/assets/0ca8f7d3-b5fb-401c-b0d3-a3bc855f2280)
 Gambar 2. MI Scores
 
+## Data Preparation
+Data Preparation merupakan tahap untuk mempersiapkan data sebelum masuk ke tahap pembuatan model Machine Learning. :
 Pada proses Data Cleaning yang dilakukan adalah seperti:
 - Converting Column Type (Mengubah tipe suatu kolom) dengan Label Encoder, Label Encoder adalah teknik dalam pembelajaran mesin yang digunakan untuk mengubah nilai kategori (categorical values) menjadi angka (numerical values).
 - Train Test Split (membagi data menjadi data latih dan data uji).
@@ -75,29 +81,33 @@ Pada proses Data Cleaning yang dilakukan adalah seperti:
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 * RandomForestClassification: Untuk model yang lebih kompleks dan mampu menangani interaksi fitur.
+  Parameter yang digunakan adalah:
+  - `n_estimators` Jumlah pohon keputusan yang akan dibuat dalam ensemble.
     * Keuntungan:
-        * Deteksi pentingnya fitur
-        * Fleksibel
-    * Kekurangan:
-        * Potensi overfitting
-        * Kurang optimal untuk data skala kecil
+      * Deteksi pentingnya fitur
+      * Fleksibel
+    * Kekurangan: 
+      * Potensi overfitting
+      * Kurang optimal untuk data skala kecil
 * Gradient Boosting Classifier (XGBoost):
+  - `random_stat`  pengambilan sampel secara acak.
     * Keuntungan:
-          * Performa tinggi
-          * dapat menangani data non-linier
-          * Fitur tambahan, seperti handling missing value
+      * Performa tinggi
+      * dapat menangani data non-linier
+      * Fitur tambahan, seperti handling missing value
     * Kekurangan:
-          * Resiko overfitting
-          * Memerlukan banyak data
-          * Kompleksitas     
+      * Resiko overfitting
+      * Memerlukan banyak data
+      * Kompleksitas     
 * Logistic Regression:
+  - `max_iter` Menentukan jumlah maksimum iterasi saat algoritma konvergen.
      * Keuntungan:
-          * Sederhana dan cepat
-          * Efisien untuk data linier
+       * Sederhana dan cepat
+       *  Efisien untuk data linier
     * Kekurangan:
-          * Sensitif terhadap korelasi antar fitur
-          * Tidak cocok untuk data non-linier
-          * Kinerja terbatas terhadap data kompleks
+      * Sensitif terhadap korelasi antar fitur
+      * Tidak cocok untuk data non-linier
+      * Kinerja terbatas terhadap data kompleks
 
 ## Evaluation
 Dalam tahap evaluasi, metrik yang digunakan adalah `accuracy`
@@ -116,7 +126,7 @@ Rumus ini memecah akurasi menjadi rasio antara data yang diklasifikasikan dengan
 Berikut hasil accuracy dari ketiga model yang latih:
 | Model | Accuracy |
 | ------ | ------ |
-| RandomForest  | 0.8543 |
+| RandomForest  | 0.8553 |
 | XGBoost | 0.851 |
 | Logistic Regression | 0.852 |
 
