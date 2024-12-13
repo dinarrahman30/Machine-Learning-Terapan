@@ -29,19 +29,17 @@ Membangun sebuah Sistem Rekomendasi Destinasi Wisata yang dapat:
 - Meningkatkan pengalaman wisatawan dengan memberikan saran yang personal dan mendekati selera mereka.
 
     ### Solution statements
-    - Mengajukan 2 atau lebih solution approach (algoritma atau pendekatan sistem rekomendasi).
+    - 
 
 ## Data Understanding
 
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
 
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
+Dalam dataset terdapat 4 buah file bertipe csv, yaitu
+- tourism_with_id.csv: mengandung informasi tempak wisata di 5 kota besar di Indonesia (Yogyakarta, Bandung, Jakarta, Semarang, dan Surabaya).
+- user.csv: mengandung informasi pengguna untuk membuat rekomendasi fitur berdasar pengguna.
+- tourism_rating.csv: mengandung informasi pengguna, tempat wisata, dan rating untuk membuat sistem rekomendasi berdasar rating.
+- package_tourism.csv: berisi rekomendasi tempat terdekat berdasarkan waktu, biaya, dan peringkat.
 
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis.
 
 ## Data Preparation
 
@@ -59,9 +57,5 @@ Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
 
 ## Evaluation
 
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
-
-**---Ini adalah bagian akhir laporan---**
 
 _Referensi:_
