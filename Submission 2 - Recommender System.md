@@ -1,11 +1,13 @@
 # Laporan Proyek Machine Learning - Dinar Wahyu Rahman
 
-Sistem Rekomendasi Destinasi Wisata dengan Collaborative Filtering
+Sistem Rekomendasi Destinasi Wisata di Kota Yogyakarta dengan Collaborative Filtering 
 
 ## Project Overview
-![Foto](https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Tempat%20wisata/Tempat%20Wisata%20di%20Indonesia%20Bali.jpg)
+![Foto](https://opinijogja.com/wp-content/uploads/2023/02/Wisata.jpg)
 
-Pariwisata menjadi salah satu bidang andalan perekonomian negara Indonesia. Industri pariwisata terus berkembang pesat, dengan berbagai destinasi wisata yang ditawarkan untuk memenuhi kebutuhan wisatawan. Namun, dengan banyaknya pilihan, wisatawan sering mengalami kesulitan dalam menentukan destinasi yang sesuai dengan preferensi mereka. Sistem rekomendasi dapat membantu memberikan saran destinasi wisata yang dipersonalisasi berdasarkan minat dan pengalaman wisatawan lainnya. Collaborative Filtering adalah salah satu metode populer untuk membangun sistem rekomendasi dengan memanfaatkan data interaksi pengguna.
+Pariwisata menjadi salah satu bidang andalan perekonomian negara Indonesia. Kota Yogyakarta adalah salah satu destinasi wisata terpopuler di Indonesia, menawarkan berbagai jenis tempat wisata mulai dari wisata budaya, sejarah, alam, hingga kuliner. Dengan banyaknya pilihan, wisatawan sering menghadapi kesulitan dalam menentukan destinasi yang sesuai dengan minat mereka. Selain itu, platform pariwisata sering kali memberikan rekomendasi generik yang kurang relevan dengan preferensi individu.
+
+Untuk mengatasi masalah ini, sistem rekomendasi destinasi wisata berbasis Collaborative Filtering dirancang untuk memberikan rekomendasi yang personal dan sesuai dengan preferensi pengguna, khususnya bagi wisatawan yang berkunjung ke Kota Yogyakarta.
 
 ## Business Understanding
 Industri pariwisata menghadapi tantangan untuk memahami kebutuhan pelanggan secara mendalam dan menyediakan pengalaman wisata yang dipersonalisasi. Wisatawan memiliki preferensi unik yang sulit dipetakan secara manual. Selain itu, keberagaman destinasi wisata yang ditawarkan sering kali membuat wisatawan bingung untuk memilih destinasi yang sesuai dengan minat mereka.
