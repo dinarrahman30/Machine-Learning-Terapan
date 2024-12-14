@@ -81,34 +81,47 @@ Pada proses Data Cleaning yang dilakukan adalah seperti:
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Anda perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
-* RandomForestClassification: Untuk model yang lebih kompleks dan mampu menangani interaksi fitur.
+* **RandomForestClassification**: Random Forest adalah algoritma ensemble yang menggunakan banyak decision trees. Setiap tree dilatih pada subset data yang diambil secara acak, dan hasil prediksi didasarkan pada voting mayoritas dari semua tree.
+  
   Parameter yang digunakan adalah:
   - `n_estimators` Jumlah pohon keputusan yang akan dibuat dalam ensemble.
-    * Keuntungan:
-      * Deteksi pentingnya fitur
-      * Fleksibel
-    * Kekurangan: 
-      * Potensi overfitting
-      * Kurang optimal untuk data skala kecil
-* Gradient Boosting Classifier (XGBoost):
+  
+  Keuntungan:
+  * Deteksi pentingnya fitur
+  * Fleksibel
+
+  Kekurangan:
+  * Potensi overfitting
+  * Kurang optimal untuk data skala kecil
+  
+* **Gradient Boosting Classifier (XGBoost)**: XGBoost adalah algoritma boosting berbasis gradient descent yang secara iteratif membangun tree baru untuk mengurangi error dari prediksi sebelumnya. Tujuannya adalah untuk meminimalkan fungsi loss secara iteratif.
+  
+  Parameter yang digunakan adalah:
   - `random_state`  pengambilan sampel secara acak.
-    * Keuntungan:
-      * Performa tinggi
-      * dapat menangani data non-linier
-      * Fitur tambahan, seperti handling missing value
-    * Kekurangan:
-      * Resiko overfitting
-      * Memerlukan banyak data
-      * Kompleksitas     
-* Logistic Regression:
+  
+  Keuntungan:
+  * Performa tinggi
+  * dapat menangani data non-linier
+  * Fitur tambahan, seperti handling missing value
+
+  Kekurangan:
+  * Resiko overfitting
+  * Memerlukan banyak data
+  * Kompleksitas
+     
+* **Logistic Regression**: Logistic Regression adalah algoritma klasifikasi yang menggunakan fungsi logistik untuk memodelkan hubungan antara variabel independen dan probabilitas hasil kategori. Hasilnya adalah nilai probabilitas yang kemudian diubah menjadi kategori dengan threshold tertentu (biasanya 0.5).
+
+  Parameter yang digunakan adalah:
   - `max_iter` Menentukan jumlah maksimum iterasi saat algoritma konvergen.
-     * Keuntungan:
-       * Sederhana dan cepat
-       *  Efisien untuk data linier
-    * Kekurangan:
-      * Sensitif terhadap korelasi antar fitur
-      * Tidak cocok untuk data non-linier
-      * Kinerja terbatas terhadap data kompleks
+  
+  Keuntungan:
+  * Sederhana dan cepat
+  *  Efisien untuk data linier
+
+  Kekurangan:
+  * Sensitif terhadap korelasi antar fitur
+  * Tidak cocok untuk data non-linier
+  * Kinerja terbatas terhadap data kompleks
 
 ## Evaluation
 Dalam tahap evaluasi, metrik yang digunakan adalah `accuracy`
