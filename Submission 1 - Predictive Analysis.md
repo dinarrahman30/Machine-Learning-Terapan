@@ -67,13 +67,22 @@ Ringkasan informasi yang kita dapat dari `Data Understanding` ialah,
 - Tidak terdapat missing value dalam dataset.
 
 #### MI Scores
-Menghitung Mutual Information (MI) scores antara fitur independen (X) dan target (y) dalam dataset. MI mengukur tingkat ketergantungan antara variabel, memberikan wawasan tentang pentingnya setiap fitur terhadap target dalam tugas klasifikasi.
+Menghitung Mutual Information (MI) scores antara fitur independen (X) dan target (y) dalam dataset. MI mengukur tingkat ketergantungan antara variabel, memberikan wawasan tentang pentingnya setiap fitur terhadap target dalam tugas klasifikasi. Guna untuk membantu mendapatkan MI Score, kita melakukan konversi `flight_day` dari mengubah nilai-nilai dalam kolom `flight_day` di DataFrame df dari nama hari menjadi angka sesuai dengan urutan hari dalam satu minggu. Guna memudahkan dalam machine learning. Penjelasan detailnya:
+
+mapping:
+
+- Sebuah dictionary yang memetakan nama hari ke angka.
+Contoh: "Mon" dipetakan menjadi 1, "Tue" menjadi 2, dan seterusnya.
+`df["flight_day"].map(mapping)`:
+
+- Fungsi .map() digunakan untuk mengganti setiap nilai dalam kolom `flight_day` dengan nilai yang sesuai dalam dictionary mapping.
+Jika nilai dalam kolom tidak ada di mapping, nilai tersebut akan diganti menjadi NaN.
 
 ![image](https://github.com/user-attachments/assets/0ca8f7d3-b5fb-401c-b0d3-a3bc855f2280)
 Gambar 2. MI Scores
 
 ## Data Preparation
-Data Preparation merupakan tahap untuk mempersiapkan data sebelum masuk ke tahap pembuatan model Machine Learning. :
+Data Preparation merupakan tahap untuk mempersiapkan data sebelum masuk ke tahap pembuatan model Machine Learning:
 - Converting Column Type (Mengubah tipe suatu kolom) dengan Label Encoder, Label Encoder adalah teknik dalam machine learning yang digunakan untuk mengubah nilai kategori (categorical values) menjadi angka (numerical values) yang dapat mempermudah dalam menjalankan model machine learning.
   - Dapat kita lihat data yang sesuah di encoding berjumlah data 1 fitur bertipe float64 dan 12 fitur bertipe int64.
 - Train Test Split (dengan pembagian data menjadi data latih 80% dan data uji 20%).
