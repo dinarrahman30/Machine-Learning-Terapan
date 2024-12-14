@@ -167,7 +167,7 @@ Tabel 1. Hasil Akurasi
 
 Gambar 3. Hasil dari akurasi berbagai model
 
-
+## Section Tambahan - Feature Important
 Top 5 Customer Behavior dengan model Random Forest,
 1. purchase_lead
 2. route
