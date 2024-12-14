@@ -74,7 +74,6 @@ Gambar 2. MI Scores
 
 ## Data Preparation
 Data Preparation merupakan tahap untuk mempersiapkan data sebelum masuk ke tahap pembuatan model Machine Learning. :
-Pada proses Data Cleaning yang dilakukan adalah seperti:
 - Converting Column Type (Mengubah tipe suatu kolom) dengan Label Encoder, Label Encoder adalah teknik dalam machine learning yang digunakan untuk mengubah nilai kategori (categorical values) menjadi angka (numerical values) yang dapat mempermudah dalam menjalankan model machine learning.
   - Dapat kita lihat data yang sesuah di encoding berjumlah data 1 fitur bertipe float64 dan 12 fitur bertipe int64.
 - Train Test Split (dengan pembagian data menjadi data latih 80% dan data uji 20%).
