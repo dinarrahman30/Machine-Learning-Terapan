@@ -32,28 +32,36 @@ Membangun sebuah Sistem Rekomendasi Destinasi Wisata yang dapat:
     - 
 
 ## Data Understanding
+Kumpulan data yang digunakan dikumpulkan dari situs web [Kaggle]([https://www.airlinequality.com/](https://www.kaggle.com/aprabowo/indonesia-tourism-destination)). Setelah mendapatkan data, data tersebut tinggal dibersihkan dan disiapkan untuk analisis. 
+Berikut informasi mengenai dataset: 
 
-
-Dalam dataset terdapat 4 buah file bertipe csv, yaitu
+Dalam dataset terdapat 4 buah file bertipe csv (Comma-Seperated Values), yaitu
 - tourism_with_id.csv: mengandung informasi tempak wisata di 5 kota besar di Indonesia (Yogyakarta, Bandung, Jakarta, Semarang, dan Surabaya).
 - user.csv: mengandung informasi pengguna untuk membuat rekomendasi fitur berdasar pengguna.
 - tourism_rating.csv: mengandung informasi pengguna, tempat wisata, dan rating untuk membuat sistem rekomendasi berdasar rating.
 - package_tourism.csv: berisi rekomendasi tempat terdekat berdasarkan waktu, biaya, dan peringkat.
 
+### Exploratory Data Analytics (EDA)
+Exploratory data analysis merupakan proses investigasi awal pada data untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data. Teknik ini biasanya menggunakan bantuan statistik dan representasi grafis atau visualisasi.
+
+![Gambar 1](https://github.com/user-attachments/assets/6bfafe31-cce6-40af-8853-a09f7544f6af)
+
+Gambar 1. Category
+
+![Gambar 2](https://github.com/user-attachments/assets/33326508-b0ab-4a6a-9937-d7a5797aa25e)
+
+Gambar 2. Rating
+
+
 
 ## Data Preparation
-
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut.
+Data Preparation merupakan tahap untuk mempersiapkan data sebelum masuk ke tahap pembuatan model Machine Learning:
+- Label Encoding
+    -    
+- Train Test Split (dengan pembagian data menjadi data latih 80% dan data uji 20%)
 
 ## Modeling
-
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menyajikan dua solusi rekomendasi dengan algoritma yang berbeda.
-- Menjelaskan kelebihan dan kekurangan dari solusi/pendekatan yang dipilih.
+Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Kita perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan.
 
 ## Evaluation
 
