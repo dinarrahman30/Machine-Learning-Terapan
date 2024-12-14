@@ -84,7 +84,10 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
 * **RandomForestClassification**: Random Forest adalah algoritma ensemble yang menggunakan banyak decision trees. Setiap tree dilatih pada subset data yang diambil secara acak, dan hasil prediksi didasarkan pada voting mayoritas dari semua tree.
   
   Parameter yang digunakan adalah:
-  - `n_estimators` Jumlah pohon keputusan yang akan dibuat dalam ensemble.
+  - `n_estimators`.
+      - Jumlah decision tree yang digunakan dalam ensemble.
+      - Value: Integer (contoh: 10, 100, 200).
+      - Default: 100. 
   
   Keuntungan:
   * Deteksi pentingnya fitur
@@ -97,7 +100,10 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
 * **Gradient Boosting Classifier (XGBoost)**: XGBoost adalah algoritma boosting berbasis gradient descent yang secara iteratif membangun tree baru untuk mengurangi error dari prediksi sebelumnya. Tujuannya adalah untuk meminimalkan fungsi loss secara iteratif.
   
   Parameter yang digunakan adalah:
-  - `random_state`  pengambilan sampel secara acak.
+  - `random_state` 
+      - Integer (misal: 42, 0, 123).
+      - Pengambilan sampel secara acak.
+      - Default: 42.
   
   Keuntungan:
   * Performa tinggi
@@ -112,7 +118,10 @@ Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyel
 * **Logistic Regression**: Logistic Regression adalah algoritma klasifikasi yang menggunakan fungsi logistik untuk memodelkan hubungan antara variabel independen dan probabilitas hasil kategori. Hasilnya adalah nilai probabilitas yang kemudian diubah menjadi kategori dengan threshold tertentu (biasanya 0.5).
 
   Parameter yang digunakan adalah:
-  - `max_iter` Menentukan jumlah maksimum iterasi saat algoritma konvergen.
+  - `max_iter`
+      - Menentukan jumlah maksimum iterasi saat algoritma konvergen.
+      - Value: Integer (contoh: 100, 1000).
+      - Default: 100.
   
   Keuntungan:
   * Sederhana dan cepat
