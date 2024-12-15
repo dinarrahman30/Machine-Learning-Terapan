@@ -29,7 +29,18 @@ Membangun sebuah Sistem Rekomendasi Destinasi Wisata yang dapat:
 - Meningkatkan pengalaman wisatawan dengan memberikan saran yang personal dan mendekati selera mereka.
 
     ### Solution statements
-    - 
+    - **Item-Based Collaborative Filtering**: Pendekatan ini mencari hubungan antar destinasi wisata berdasarkan pola penilaian pengguna. Sistem ini merekomendasikan destinasi yang serupa dengan destinasi yang sudah pernah dikunjungi oleh pengguna.
+
+        Kelebihan:
+
+        - Lebih stabil dibandingkan User-Based Collaborative Filtering.
+
+        - Tidak terlalu terpengaruh oleh jumlah pengguna baru.
+
+        Kekurangan:
+
+        - Memerlukan data interaksi yang cukup untuk menganalisis hubungan antar destinasi.
+    - **Meningkatkan Akurasi Rekomendasi**: Menggunakan algoritma Neural Network untuk membangun Sistem Rekomendasi Destinasi Wisata dengan Collaborative Filtering dapat dilakukan dengan pendekatan berbasis Deep Learning, seperti Neural Collaborative Filtering (NCF). Algoritma ini memanfaatkan jaringan saraf tiruan (Artificial Neural Network) untuk menemukan pola hubungan kompleks antara pengguna dan destinasi wisata.
 
 ## Data Understanding
 Kumpulan data yang digunakan dikumpulkan dari situs web [Kaggle]([https://www.airlinequality.com/](https://www.kaggle.com/aprabowo/indonesia-tourism-destination)). Setelah mendapatkan data, data tersebut tinggal dibersihkan dan disiapkan untuk analisis. 
