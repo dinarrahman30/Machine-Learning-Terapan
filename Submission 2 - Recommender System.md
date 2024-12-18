@@ -73,7 +73,7 @@ Kesimpulan dari sesi `Data Understanding`, didapat,
 - Tidak terdapat data yang duplikat.
 - Dataset memiliki 3 fitur `int64`, 5 `object`, dan 5 `float64`.
 
-### Exploratory Data Analytics (EDA)
+### Exploratory Data Analytics (EDA) - Visualisasi Data
 Exploratory data analysis merupakan proses investigasi awal pada data untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data. Teknik ini biasanya menggunakan bantuan statistik dan representasi grafis atau visualisasi.
 
 ![Gambar 1](https://github.com/user-attachments/assets/6bfafe31-cce6-40af-8853-a09f7544f6af)
