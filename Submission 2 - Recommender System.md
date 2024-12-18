@@ -47,10 +47,31 @@ Kumpulan data yang digunakan dikumpulkan dari situs web [Kaggle](https://www.kag
 Berikut informasi mengenai dataset: 
 
 Dalam dataset terdapat 4 buah file bertipe csv (Comma-Seperated Values), yaitu
-- tourism_with_id.csv: mengandung informasi tempak wisata di 5 kota besar di Indonesia (Yogyakarta, Bandung, Jakarta, Semarang, dan Surabaya).
-- user.csv: mengandung informasi pengguna untuk membuat rekomendasi fitur berdasar pengguna.
-- tourism_rating.csv: mengandung informasi pengguna, tempat wisata, dan rating untuk membuat sistem rekomendasi berdasar rating.
-- package_tourism.csv: berisi rekomendasi tempat terdekat berdasarkan waktu, biaya, dan peringkat.
+- _tourism_with_id.csv_: mengandung informasi tempak wisata di 5 kota besar di Indonesia (Yogyakarta, Bandung, Jakarta, Semarang, dan Surabaya).
+- _user.csv_: mengandung informasi pengguna untuk membuat rekomendasi fitur berdasar pengguna.
+- _tourism_rating.csv_: mengandung informasi pengguna, tempat wisata, dan rating untuk membuat sistem rekomendasi berdasar rating.
+- -package_tourism.csv_: berisi rekomendasi tempat terdekat berdasarkan waktu, biaya, dan peringkat.
+
+Dari output `.info()` pada file data _tourism_with_id.csv_ dapat disimpulkan bahwa:
+- `Place_Id`: ID dari setiap tempat wisata yang digunakan untuk membedakan tempat satu dengan lainnya.
+- `Place_Name`: Nama tempat wisata
+- `Description`: Deskripsi singkat tentang tempat wisata, mencakup informasi utama yang menarik perhatian wisatawan, seperti daya tarik utama atau sejarah singkat.
+- `Category`: Kategori tempat wisata, seperti "Budaya", "Sejarah", "Alam", atau "Kuliner".
+- `City`: Kota tempat wisata tersebut berada, misalnya "Yogyakarta".
+- `Price`: Harga masuk atau biaya yang diperlukan untuk menikmati tempat wisata tersebut (dapat berupa nominal dalam mata uang tertentu).
+- `Rating`: Penilaian rata-rata dari pengunjung, biasanya dalam skala tertentu (misalnya 1-5).
+- `Time_Minutes`: Estimasi waktu yang diperlukan untuk menikmati atau mengunjungi tempat wisata tersebut (dalam satuan menit).
+- `Coordinate`: Informasi lokasi dalam bentuk koordinat geografis yang mungkin mencakup kombinasi latitude (Lat) dan longitude (Long).
+- `Lat`: Latitude, yaitu garis lintang yang menunjukkan lokasi tempat wisata di peta.
+- `Long`: Longitude, yaitu garis bujur yang menunjukkan lokasi tempat wisata di peta.
+- `Unnamed: 11`: Kolom yang berisi nilai NaN.
+- `Unnamed; 12`: Kolom yang berisi angka.
+
+Kesimpulan dari sesi `Data Understanding`, didapat,
+- Dataset memiliki 437 sample dengan jumlah kolom sebanyak 13.
+- Terdapat fitur `Time_Minutes` dengan missing value sebanyak 232 dan kolom `Unnamed: 11` sebanyak 437.
+- Tidak terdapat data yang duplikat.
+- Dataset memiliki 3 fitur `int64`, 5 `object`, dan 5 `float64`.
 
 ### Exploratory Data Analytics (EDA)
 Exploratory data analysis merupakan proses investigasi awal pada data untuk menganalisis karakteristik, menemukan pola, anomali, dan memeriksa asumsi pada data. Teknik ini biasanya menggunakan bantuan statistik dan representasi grafis atau visualisasi.
@@ -75,6 +96,7 @@ Dari Gambar 2 di atas dapat disimpulkan bahwa,
 Data Preparation merupakan tahap untuk mempersiapkan data sebelum masuk ke tahap pembuatan model Machine Learning:
 - **Menghapus Kolom yang Tidak Diperlukan**: Namun, kita akan mendrop beberapa fitur yang tidak terpakai dalam membangun model rekomendasi _content-based filtering_ yaitu `Rating`, `Time_Minutes`, `Unnamed: 11`, dan `Unnamed: 12`.
 - **Case folding**: Konversi karakter dari huruf besar ke huruf kecil pada kolom `Description`.
+- **Stopword Removal**: Menghilangkan kolom `Description` dari huruf Jawa Kuno.
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Kita perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan. Beberapa tahapan dalam membuat sistem rekomendasi dengan metode _Content-Based Filtering_.
