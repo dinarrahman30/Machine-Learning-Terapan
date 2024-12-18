@@ -96,7 +96,7 @@ Dari Gambar 2 di atas dapat disimpulkan bahwa,
 Data Preparation merupakan tahap untuk mempersiapkan data sebelum masuk ke tahap pembuatan model Machine Learning:
 - **Menghapus Kolom yang Tidak Diperlukan**: Namun, kita akan mendrop beberapa fitur yang tidak terpakai dalam membangun model rekomendasi _content-based filtering_ yaitu `Rating`, `Time_Minutes`, `Unnamed: 11`, dan `Unnamed: 12`.
 - **Case folding**: Konversi karakter dari huruf besar ke huruf kecil pada kolom `Description`.
-- **Stopword Removal**: Menghilangkan kolom `Description` dari huruf Jawa Kuno.
+- **Data Cleaning**: Menghilangkan huruf Jawa Kuno pada kolom `Description` .
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Kita perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan. Beberapa tahapan dalam membuat sistem rekomendasi dengan metode _Content-Based Filtering_.
