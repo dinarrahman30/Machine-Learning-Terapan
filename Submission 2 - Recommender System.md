@@ -10,7 +10,7 @@ Indonesia memiliki ribuan destinasi wisata dengan keindahan alam, budaya, dan ku
 ## Business Understanding
 Industri pariwisata menghadapi tantangan untuk memahami kebutuhan pelanggan secara mendalam dan menyediakan pengalaman wisata yang dipersonalisasi. Wisatawan memiliki preferensi unik yang sulit dipetakan secara manual. Selain itu, keberagaman destinasi wisata yang ditawarkan sering kali membuat wisatawan bingung untuk memilih destinasi yang sesuai dengan minat mereka.
 
-Sistem rekomendasi berbasis Collaborative Filtering memberikan peluang besar untuk meningkatkan pengalaman pelanggan dengan menyediakan saran destinasi yang relevan. Pendekatan ini tidak hanya membantu wisatawan menemukan destinasi favorit, tetapi juga membantu penyedia layanan pariwisata dalam mendorong engagement pelanggan dan meningkatkan loyalitas.
+Tujuan utama dari Sistem Rekomendasi Destinasi Wisata ini adalah untuk memberikan rekomendasi destinasi wisata yang relevan bagi pengguna berdasarkan preferensi mereka. Dengan menggunakan Content-Based Filtering, sistem dapat menyarankan tempat wisata yang memiliki kesamaan dengan tempat yang sudah dinikmati pengguna, serta mengidentifikasi destinasi berdasarkan kategori yang paling diminati. Rekomendasi ini diharapkan dapat meningkatkan pengalaman pengguna dalam merencanakan perjalanan wisata.
 
 ### Problem Statements
 
@@ -112,7 +112,7 @@ Hasil dari rekomendasi diatas setelah dikonversi oleh _TF-IDF Vectorizer_, dan t
 
 get_recommendation: **Jembatan Kota Intan**
 
-Berikut output hasil rekomendasi tempat wisata berdasarkan rekomendasi yang sama.
+Berikut output hasil rekomendasi tempat wisata berdasarkan rekomendasi yang sama (kota dan kategori).
 
 **Output**:
 
