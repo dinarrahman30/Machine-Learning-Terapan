@@ -50,7 +50,9 @@ Dalam dataset terdapat 4 buah file bertipe csv (Comma-Seperated Values), yaitu
 - _tourism_with_id.csv_: mengandung informasi tempak wisata di 5 kota besar di Indonesia (Yogyakarta, Bandung, Jakarta, Semarang, dan Surabaya).
 - _user.csv_: mengandung informasi pengguna untuk membuat rekomendasi fitur berdasar pengguna.
 - _tourism_rating.csv_: mengandung informasi pengguna, tempat wisata, dan rating untuk membuat sistem rekomendasi berdasar rating.
-- -package_tourism.csv_: berisi rekomendasi tempat terdekat berdasarkan waktu, biaya, dan peringkat.
+- _package_tourism.csv_: berisi rekomendasi tempat terdekat berdasarkan waktu, biaya, dan peringkat.
+
+Untuk pemodelan machine learning pada kasus ini, kita hanya akan menggunakan file `tourism_with_id.csv`.
 
 Dari output `.info()` pada file data _tourism_with_id.csv_ dapat disimpulkan bahwa:
 - `Place_Id`: ID dari setiap tempat wisata yang digunakan untuk membedakan tempat satu dengan lainnya.
@@ -184,7 +186,7 @@ Hasil Akhir dari evaluasi metriks dengan menggunakan rumus diatas, didapatkan:
 | Precision | 0.26 |
 | Recall | 0.01 |
 
-Kesimpulan dari evaluasi metriks diatas,
+Kesimpulan dari evaluasi metriks diatas, ialah
 - Precision (0.26) menunjukkan bahwa beberapa rekomendasi benar, tetapi kualitas rekomendasi masih belum konsisten (banyak tempat tidak relevan yang direkomendasikan).
 - Recall (0.01) yang sangat rendah menunjukkan bahwa sistem hampir tidak mampu menemukan item relevan di dataset untuk direkomendasikan.
 
