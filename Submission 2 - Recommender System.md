@@ -155,7 +155,7 @@ Langkah-langkah Utama dalam Evaluasi:
 - Pembagian Data:
   Data dibagi menjadi train dan test menggunakan train_test_split dengan 20% data untuk pengujian.
 - Kategori Relevan:
-  Hanya tempat dengan kategori 'Budaya' dan 'Alam' yang dianggap relevan untuk evaluasi.
+  Kali ini kita hanya mengevaluasi tempat dengan kategori 'Budaya' dan 'Alam'.
 - Looping pada Data Uji:
   Sistem mengevaluasi rekomendasi berdasarkan apakah rekomendasi mencakup kategori relevan.
 - Menghitung Precision:
@@ -170,15 +170,19 @@ Rumus:
 $$precision = \frac{TP}{TP + FP}$$
 
    Di mana:
-   $TP =$ _True Positive_; rekomendasi yang sesuai.
-   $FP =$ _False Positive_; rekomendasi yang tidak sesuai.
+   
+   - $TP =$ _True Positive_; rekomendasi yang sesuai.
+   
+   - $FP =$ _False Positive_; rekomendasi yang tidak sesuai.
 
 
 $$Recall = \frac{TP}{TP + FN}$$
 
    Di mana:
-   $TP =$ _True Positive_; rekomendasi yang sesuai.
-   $FN =$ _False Negative_; Jumlah item relevan yang tidak ditemukan dalam rekomendasi.
+   
+   - $TP =$ _True Positive_; rekomendasi yang sesuai.
+   
+   - $FN =$ _False Negative_; Jumlah item relevan yang tidak ditemukan dalam rekomendasi.
 
 Hasil Akhir dari evaluasi metriks dengan menggunakan rumus diatas, didapatkan:
 | Evaluate Metrics | Result |
