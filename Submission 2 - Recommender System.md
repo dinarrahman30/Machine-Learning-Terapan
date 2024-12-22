@@ -52,7 +52,7 @@ Dalam dataset terdapat 4 buah file bertipe csv (Comma-Seperated Values), yaitu
 - _tourism_rating.csv_: mengandung informasi pengguna, tempat wisata, dan rating untuk membuat sistem rekomendasi berdasar rating.
 - _package_tourism.csv_: berisi rekomendasi tempat terdekat berdasarkan waktu, biaya, dan peringkat.
 
-Untuk pemodelan machine learning pada kasus ini, kita hanya akan menggunakan file `tourism_with_id.csv`.
+Untuk pemodelan machine learning pada kasus ini, data yang akan digunakan hanya file `tourism_with_id.csv`.
 
 Dari output `.info()` pada file data _tourism_with_id.csv_ dapat disimpulkan bahwa:
 - `Place_Id`: ID dari setiap tempat wisata yang digunakan untuk membedakan tempat satu dengan lainnya.
@@ -84,7 +84,7 @@ Gambar 1. Category
 
 Dari Gambar 1 di atas dapat disimpulkan bahwa,
 - Grafik ini akan menunjukkan frekuensi atau jumlah destinasi wisata yang terdaftar di setiap kategori. Jika satu kategori memiliki banyak destinasi wisata, itu menunjukkan bahwa kategori tersebut lebih populer atau lebih banyak tempat yang terdaftar dalam kategori tersebut.
-- Dari jumlah bar pada grafik, kita dapat melihat kategori mana yang memiliki jumlah destinasi wisata terbanyak, dan mana yang memiliki jumlah sedikit. Misalnya, jika kategori "Alam" memiliki jumlah yang sangat tinggi dibandingkan dengan kategori "Kuliner", maka dapat disimpulkan bahwa lebih banyak destinasi wisata yang berkaitan dengan alam daripada kuliner dalam dataset tersebut.
+- Dari jumlah bar pada grafik, dapat melihat kategori mana yang memiliki jumlah destinasi wisata terbanyak, dan mana yang memiliki jumlah sedikit. Misalnya, jika kategori "Alam" memiliki jumlah yang sangat tinggi dibandingkan dengan kategori "Kuliner", maka dapat disimpulkan bahwa lebih banyak destinasi wisata yang berkaitan dengan alam daripada kuliner dalam dataset tersebut.
 
 ![Gambar 2](https://github.com/user-attachments/assets/33326508-b0ab-4a6a-9937-d7a5797aa25e)
 
@@ -96,14 +96,10 @@ Dari Gambar 2 di atas dapat disimpulkan bahwa,
 
 ## Data Preparation
 Data Preparation merupakan tahap untuk mempersiapkan data sebelum masuk ke tahap pembuatan model Machine Learning:
-- **Menghapus Kolom yang Tidak Diperlukan**: Namun, kita akan mendrop beberapa fitur yang tidak terpakai dalam membangun model rekomendasi _content-based filtering_ yaitu `Rating`, `Time_Minutes`, `Unnamed: 11`, dan `Unnamed: 12`.
+- **Menghapus Kolom yang Tidak Diperlukan**: Untuk persiapan ke modeling, beberapa kolom yang tidak akan digunakan dalam membangun model rekomendasi _content-based filtering_ akan didrop yaitu `Rating`, `Time_Minutes`, `Unnamed: 11`, dan `Unnamed: 12`.
 - **Case folding**: Konversi karakter dari huruf besar ke huruf kecil pada kolom `Description`.
 - **Data Cleaning**: Menghilangkan huruf Jawa Kuno pada kolom `Description` .
-
-## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Kita perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan. Beberapa tahapan dalam membuat sistem rekomendasi dengan metode _Content-Based Filtering_.
-
-**TF-IDF Vectorizer**: Untuk mengubah kumpulan teks pada kolom _Tags_ yang berisi kumpulan data pada kolom _Category_, _City_, dan _Price_ menjadi representasi vektor menggunakan metode TF-IDF. TF-IDF Vectorizer adalah metode yang digunakan untuk menghitung bobot setiap kata yang telah diekstrasi. TF-IDF digunakan untuk menghitung kata-kata umum dalam pencarian. [[2](https://www.researchgate.net/publication/368065924_Opinion_Analysis_of_Traveler_Based_on_Tourism_Site_Review_Using_Sentiment_Analysis)].
+- **TF-IDF Vectorizer**: Untuk mengubah kumpulan teks pada kolom _Tags_ yang berisi kumpulan data pada kolom _Category_, _City_, dan _Price_ menjadi representasi vektor menggunakan metode TF-IDF. TF-IDF Vectorizer adalah metode yang digunakan untuk menghitung bobot setiap kata yang telah diekstrasi. TF-IDF digunakan untuk menghitung kata-kata umum dalam pencarian. [[2](https://www.researchgate.net/publication/368065924_Opinion_Analysis_of_Traveler_Based_on_Tourism_Site_Review_Using_Sentiment_Analysis)].
   
 $$W_{dt} = tf_{dt} \times IDF_{t}$$
   
@@ -114,6 +110,26 @@ $$W_{dt} = tf_{dt} \times IDF_{t}$$
   - $tf_{dt} =$ banyaknya kata yang dicari pada sebuah dokumen
   - $IDF =$ Inversed Document Frequency
 
+Langkah-Langkah dalam tahapan TF-IDF Vectorizer,
+1. Menggabungkan Kolom Category, City, dan Price:
+   - Kolom Category, City, dan Price digabungkan menjadi satu kolom baru bernama Tags.
+   - Nilai Price diubah menjadi tipe string karena akan digabung dengan teks.
+2. Membuat Objek TF-IDF Vectorizer:
+   - Objek TfidfVectorizer dari sklearn.feature_extraction.text digunakan untuk memproses teks.
+   - Secara default, vektorizer ini akan:
+     - Tokenisasi teks (memecah teks menjadi kata-kata).
+     - Menghitung nilai TF-IDF untuk setiap kata.
+3. Fit dan Transform Kolom Tags:
+   - fit_transform digunakan untuk mempelajari fitur (kata-kata unik) dari kolom Tags dan mengubahnya menjadi representasi vektor TF-IDF.
+   - Hasilnya adalah matriks sparse (dengan banyak nilai nol) yang merepresentasikan nilai TF-IDF untuk setiap kata dalam setiap baris data.
+4. Menampilkan Matriks TF-IDF:
+   - tfidf_matrix adalah objek matriks sparse, yang menunjukkan nilai TF-IDF untuk setiap kata.
+5. Menampilkan Fitur yang Dipelajari:
+   - tfidf.get_feature_names_out() memberikan daftar fitur (kata-kata unik) yang digunakan oleh model.
+   - Ini menunjukkan semua kata yang terdapat dalam teks setelah proses tokenisasi. 
+
+## Modeling
+Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. Pada tahapan ini perlu menjelaskan tahapan dan parameter yang digunakan pada proses pemodelan. Beberapa tahapan dalam membuat sistem rekomendasi dengan metode _Content-Based Filtering_.
     
 **Cosine Similarity**: Melakukan perhitungan derajat kesamaan atau similatiry degree antar nama tempat wisata dengan teknik cosine similarity menggunakan library scikit-learn. Secara umum, fungsi _similarity_ adalah fungsi yang menerima dua buah objek berupa bilangan riil (0 dan 1) dan mengembalikan nilai kemiripan antara kedua objek tersebut berupa bilangan riil. Jika kefua objek memiliki nilai similaritas 1, maka kedua ibjek yang diavaluasi dianggap semakin mirip, begitupun sebaliknya. [[3](https://jurnal.uns.ac.id/itsmart/article/view/35008/27748)]
 
@@ -155,7 +171,7 @@ Langkah-langkah Utama dalam Evaluasi:
 - Pembagian Data:
   Data dibagi menjadi train dan test menggunakan train_test_split dengan 20% data untuk pengujian.
 - Kategori Relevan:
-  Kali ini kita hanya mengevaluasi tempat dengan kategori 'Budaya' dan 'Alam'.
+  Kali ini model hanya mengevaluasi tempat dengan kategori 'Budaya' dan 'Alam'.
 - Looping pada Data Uji:
   Sistem mengevaluasi rekomendasi berdasarkan apakah rekomendasi mencakup kategori relevan.
 - Menghitung Precision:
