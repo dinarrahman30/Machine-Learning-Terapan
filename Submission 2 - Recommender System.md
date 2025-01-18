@@ -2,8 +2,8 @@
 
 Sistem Rekomendasi Destinasi Wisata di Indonesia dengan Content-Based Filtering 
 
-## Link Kode
-[Notebook]('https://github.com/dinarrahman30/Machine-Learning-Terapan/blob/main/Recommender_System.ipynb')
+## Link Notebook
+[Notebook](https://github.com/dinarrahman30/Machine-Learning-Terapan/blob/main/Recommender_System.ipynb)
 
 ## Project Overview
 ![Foto](https://opinijogja.com/wp-content/uploads/2023/02/Wisata.jpg)
