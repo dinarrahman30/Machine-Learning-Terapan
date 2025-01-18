@@ -2,6 +2,9 @@
 
 ![British Airways](https://media.cntraveler.com/photos/577fcc03e0b5a6244f4c789c/16:9/w_2560%2Cc_limit/BritishAirways-Boeing777-AlamyF1KW8J.jpg)
 
+## Link Notebook
+[Notebook](https://github.com/dinarrahman30/Machine-Learning-Terapan/blob/main/Predictive_Analysis.ipynb)
+
 ## Domain Proyek
 
 British Airways (BA) adalah maskapai penerbangan nasional Britania Raya (UK) [[1](https://www.britishairways.com/content/information/about-ba)]. Setiap hari, ribuan penerbangan BA tiba dan berangkat dari Inggris, membawa pelanggan dari seluruh dunia. Baik untuk liburan, pekerjaan, atau alasan lainnya, proses menyeluruh dari penjadwalan, perencanaan, naik pesawat, pengisian bahan bakar, transportasi, pendaratan, dan terus menjalankan penerbangan tepat waktu, efisien, dan dengan layanan pelanggan kelas atas merupakan tugas besar dengan banyak tanggung jawab yang sangat penting.
