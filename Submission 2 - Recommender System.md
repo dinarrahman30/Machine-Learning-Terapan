@@ -6,7 +6,7 @@ Sistem Rekomendasi Destinasi Wisata di Indonesia dengan Content-Based Filtering
 [Notebook](https://github.com/dinarrahman30/Machine-Learning-Terapan/blob/main/Recommender_System.ipynb)
 
 ## Project Overview
-![Foto](https://opinijogja.com/wp-content/uploads/2023/02/Wisata.jpg)
+![Foto](https://cove-blog-id.sgp1.cdn.digitaloceanspaces.com/cove-blog-id/2021/12/jakarta-barat.webp)
 
 Indonesia memiliki ribuan destinasi wisata dengan keindahan alam, budaya, dan kuliner yang menarik. Namun, dengan begitu banyak pilihan, wisatawan sering kali bingung menentukan destinasi yang sesuai dengan preferensi pribadi. Oleh karena itu, dibutuhkan sistem rekomendasi berbasis fitur destinasi yang dapat membantu pengguna menemukan tempat wisata yang relevan berdasarkan karakteristik tempat dan preferensi mereka.
 
